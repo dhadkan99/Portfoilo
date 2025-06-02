@@ -14,21 +14,34 @@ export default function SkillsSection() {
     { name: "JavaScript", category: "Programming", icon: "🟨", level: 85, color: "#facc15" },
     { name: "TypeScript", category: "Programming", icon: "🔷", level: 80, color: "#2563eb" },
     { name: "Tailwind CSS", category: "Styling", icon: "🎨", level: 95, color: "#06b6d4" },
-    { name: "HTML5", category: "Markup", icon: "🌐", level: 95, color: "#f97316" },
+    { name: "HTML", category: "Markup", icon: "🌐", level: 95, color: "#f97316" },
     { name: "CSS3", category: "Styling", icon: "🎨", level: 90, color: "#8b5cf6" },
     { name: "Figma", category: "Design", icon: "🎨", level: 85, color: "#ec4899" },
     { name: "Unity Engine", category: "Game Dev", icon: "🎮", level: 75, color: "#10b981" },
     { name: "Git", category: "Version Control", icon: "📝", level: 80, color: "#64748b" },
     { name: "Node.js", category: "Backend", icon: "🟢", level: 70, color: "#22c55e" },
+    { name: "MongoDB", category: "Database", icon: "🟢", level: 70, color: "#22c55e" },
+    { name: "MySQL", category: "Database", icon: "🟢", level: 60, color: "#22c55e" },
+    { name: "Postman", category: "API", icon: "🟢", level: 70, color: "#22c55e" },
+    { name: "AWS", category: "Cloud", icon: "☁️", level: 75, color: "#ff9900" },
+    { name: "Amplify", category: "Cloud", icon: "📶", level: 65, color: "#ff9900" },
+    { name: "Azure", category: "Cloud", icon: "🌀", level: 65, color: "#007FFF" },
+    { name: "C", category: "Programming", icon: "💻", level: 80, color: "#a0aec0" },
+    { name: "C++", category: "Programming", icon: "💻", level: 75, color: "#4a5568" },
+    { name: "C#", category: "Programming", icon: "💻", level: 75, color: "#6b46c1" },
+    { name: "PHP", category: "Backend", icon: "🐘", level: 60, color: "#8892be" },
+    { name: "Python", category: "Programming", icon: "🐍", level: 80, color: "#306998" },
+    { name: "Java", category: "Programming", icon: "☕", level: 80, color: "#f97316" },
+    { name: "Linux", category: "OS", icon: "🐧", level: 70, color: "#000000" },
+    { name: "Express.js", category: "Backend", icon: "🚂", level: 65, color: "#333" },
+    { name: "Next.js", category: "Frontend", icon: "⏭️", level: 75, color: "#000000" },
   ]
 
-  const categories = ["All", "Frontend", "Programming", "Styling", "Design", "Game Dev", "Version Control", "Backend"]
+  const categories = ["All", "Frontend", "Programming", "Styling", "Design", "Game Dev", "Version Control", "Backend", "Database", "API", "Cloud", "OS"]
   const [activeCategory, setActiveCategory] = useState("All")
   const [showAllLanguages, setShowAllLanguages] = useState(false)
 
-  const filteredSkills =
-    activeCategory === "All" ? skills : skills.filter((skill) => skill.category === activeCategory)
-
+  const filteredSkills = activeCategory === "All" ? skills : skills.filter((skill) => skill.category === activeCategory)
   const visibleSkills = showAllLanguages ? filteredSkills : filteredSkills.slice(0, 4)
 
   return (
@@ -48,12 +61,14 @@ export default function SkillsSection() {
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 mx-auto" />
         </div>
 
-        {/* Category Filters */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category, index) => (
             <Badge
               key={index}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => {
+                setActiveCategory(category);
+                setShowAllLanguages(false);
+              }}
               variant="outline"
               className={`px-6 py-3 text-sm font-medium cursor-pointer transition-all duration-300 hover:scale-105 ${
                 activeCategory === category
@@ -66,23 +81,22 @@ export default function SkillsSection() {
           ))}
         </div>
 
-        {/* Skills Cards */}
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <AnimatePresence>
-            {visibleSkills.map((skill, index) => (
+          <AnimatePresence initial={false}>
+            {visibleSkills.map((skill) => (
               <motion.div
                 key={skill.name}
                 layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                exit={{ opacity: 0, y: 0 }}
+                transition={{ duration: 0.4 }}
               >
-                <Card className="p-6 hover:shadow-2xl transition-all duration-500 hover:scale-105 group relative overflow-hidden bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg border-slate-200/50 dark:border-slate-700/50">
+                <Card className="p-6 hover:shadow-xl transition-all duration-300 group relative overflow-hidden bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-slate-200/50 dark:border-slate-700/50">
                   <div className="relative z-10">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 bg-white dark:bg-slate-900 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-slate-200/50 dark:border-slate-700/50 shadow-lg">
+                        <div className="w-14 h-14 bg-white dark:bg-slate-900 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300 border border-slate-200/50 dark:border-slate-700/50 shadow-md">
                           <span className="text-2xl group-hover:animate-bounce">{skill.icon}</span>
                         </div>
                         <div>
@@ -100,11 +114,11 @@ export default function SkillsSection() {
                           value={skill.level}
                           styles={buildStyles({
                             pathColor: skill.color,
-                            trailColor: "#1f2937",
+                            trailColor: "#e5e7eb",
                             pathTransitionDuration: 1.4,
                           })}
                         >
-                          <div className="text-sm font-bold text-black">{skill.level}%</div>
+                          <div className="text-sm font-bold text-black dark:text-white">{skill.level}%</div>
                         </CircularProgressbarWithChildren>
                       </div>
                     </div>
@@ -115,19 +129,17 @@ export default function SkillsSection() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Show More / Less Button */}
         {filteredSkills.length > 4 && (
           <div className="mt-8 text-center">
             <button
-              onClick={() => setShowAllLanguages(!showAllLanguages)}
-              className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+              onClick={() => setShowAllLanguages((prev) => !prev)}
+              className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-full hover:opacity-90 transition"
             >
               {showAllLanguages ? "Show Less" : "Show More"}
             </button>
           </div>
         )}
 
-        {/* Summary */}
         <div className="mt-16 text-center">
           <div className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-lg rounded-2xl p-8 border border-slate-200/50 dark:border-slate-700/50 max-w-4xl mx-auto shadow-xl">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Constantly Learning & Growing</h3>

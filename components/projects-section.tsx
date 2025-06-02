@@ -13,7 +13,7 @@ export default function ProjectsSection() {
       title: "ToDo Application",
       description:
         "A minimal and modern To-Do application built using React for managing daily tasks with local storage.",
-      image: "https://source.unsplash.com/featured/?todo,productivity",
+      image: "https://images.unsplash.com/photo-1690439440176-ba5dc3114dd1?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGxpZ2h0JTIwdGhlYW0lMjBjb2RlaW5nfGVufDB8fDB8fHww",
       technologies: ["React", "Tailwind CSS", "Local Storage"],
       github: "https://github.com/dhadkan99/ToDO-application.git",
       featured: true,
@@ -22,8 +22,8 @@ export default function ProjectsSection() {
       title: "Weather Application",
       description:
         "A weather forecast application showing real-time temperature and conditions fetched from public APIs.",
-      image: "https://source.unsplash.com/featured/?weather,sky",
-      technologies: ["JavaScript", "OpenWeather API", "CSS"],
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29kaW5nfGVufDB8fDB8fHww",
+      technologies: ["JavaScript", "OpenWeather API", "CSS","html","php","mysql"],
       github: "https://github.com/dhadkan99/WeatherAppliacion.git",
       featured: true,
     },
@@ -31,8 +31,8 @@ export default function ProjectsSection() {
       title: "FPS Unity Game",
       description:
         "A first-person shooter game built in Unity with C# scripts, 3D environments, and smooth gameplay mechanics.",
-      image: "https://source.unsplash.com/featured/?game,unity",
-      technologies: ["Unity", "C#", "Blender"],
+      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGdhbWV8ZW58MHx8MHx8fDA%3D",
+      technologies: ["Unity Engine ", "C#"],
       github: "https://github.com/dhadkan99/FPSGame.git",
       featured: false,
     },
@@ -40,8 +40,8 @@ export default function ProjectsSection() {
       title: "NoPixel Voting System",
       description:
         "A full-stack voting system built with React and Node.js that includes authentication, elections, and results.",
-      image: "https://source.unsplash.com/featured/?voting,technology",
-      technologies: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+      image: "https://images.unsplash.com/photo-1704717700476-af979f54baf1?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvZGUlMjAlMjBkYXJrJTIwdGhlYW18ZW58MHx8MHx8fDA%3D",
+      technologies: ["React", "Node.js", "MongoDB","figma" ," CSS","postman"],
       github: "https://github.com/dhadkan99/Nopixel_Voting_system.git",
       featured: false,
     },
@@ -88,13 +88,12 @@ export default function ProjectsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {project.featured && (
-                  <Badge className="absolute top-4 left-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white animate-pulse border-0">
+                  <Badge className="absolute top-4 left-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0">
                     <Star className="w-3 h-3 mr-1" />
                     Featured
                   </Badge>
                 )}
 
-                {/* Hover overlay with buttons */}
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Link href={project.github} target="_blank">
                     <Button
@@ -113,7 +112,9 @@ export default function ProjectsSection() {
                 <CardTitle className="text-xl group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </CardTitle>
-                <CardDescription className="text-slate-600 dark:text-slate-300">{project.description}</CardDescription>
+                <CardDescription className="text-slate-600 dark:text-slate-300">
+                  {project.description}
+                </CardDescription>
               </CardHeader>
 
               <CardContent>
