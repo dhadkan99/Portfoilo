@@ -19,6 +19,7 @@ const buttonVariants = cva(
         sm: "px-4 py-2 text-sm",
         md: "px-6 py-3 text-base",
         lg: "px-8 py-4 text-lg",
+        icon: "h-8 w-8 p-0",
       },
     },
     defaultVariants: {
@@ -31,6 +32,7 @@ const buttonVariants = cva(
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean
   children: React.ReactNode
+  size?: "sm" | "md" | "lg" | "icon"
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
