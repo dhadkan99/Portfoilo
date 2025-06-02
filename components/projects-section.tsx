@@ -42,7 +42,7 @@ export default function ProjectsSection() {
         "A full-stack voting system built with React and Node.js that includes authentication, elections, and results.",
       image: "https://images.unsplash.com/photo-1704717700476-af979f54baf1?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvZGUlMjAlMjBkYXJrJTIwdGhlYW18ZW58MHx8MHx8fDA%3D",
       technologies: ["React", "Node.js", "MongoDB","figma" ," CSS","postman"],
-      github: "https://github.com/dhadkan99/Nopixel_Voting_system.git",
+      github: "https://github.com/RaZa077/Nopixel_Voting_system.git",
       featured: false,
     },
   ]
