@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Card } from "../components/ui/card"
+import { Badge } from "../components/ui/badge"
 import { TrendingUp, Zap } from "lucide-react"
 import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar"
 import "react-circular-progressbar/dist/styles.css"

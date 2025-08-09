@@ -1,7 +1,7 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
+import { Button } from "../components/ui/button"
+import { Card } from "../components/ui/card"
 import { Download, Code, Palette, Gamepad2, Github, Award, Users, Coffee } from "lucide-react"
 
 export default function AboutSection() {

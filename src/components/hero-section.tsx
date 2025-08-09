@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "../components/ui/button"
 import { ChevronDown, Code, Palette, Gamepad2, Sparkles, Github, Linkedin, Mail } from "lucide-react"
 import Image from "next/image"
 

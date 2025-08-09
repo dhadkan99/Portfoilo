@@ -1,8 +1,8 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Button } from "../components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
+import { Badge } from "../components/ui/badge"
 import { Github, Star, Rocket } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -10,12 +10,12 @@ import Link from "next/link"
 export default function ProjectsSection() {
   const projects = [
     {
-      title: "ToDo Application",
+      title: "Task-Tracker",
       description:
         "A minimal and modern To-Do application built using React for managing daily tasks with local storage.",
       image: "https://images.unsplash.com/photo-1690439440176-ba5dc3114dd1?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGxpZ2h0JTIwdGhlYW0lMjBjb2RlaW5nfGVufDB8fDB8fHww",
       technologies: ["React", "Tailwind CSS", "Local Storage"],
-      github: "https://github.com/dhadkan99/ToDO-application.git",
+      github: "hhttps://github.com/dhadkan99/Task-Tracker",
       featured: true,
     },
     {
